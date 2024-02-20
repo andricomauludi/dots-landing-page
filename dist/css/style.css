@@ -1234,10 +1234,10 @@ label {
 	margin: 0;
 }
 
-/* .container-scroll {
+.container-scroll {
 	overflow-x: hidden;
     min-height: 100vh * 3;
-} */
+}
 .device-mockup {
 	position: absolute;
 	z-index: 1;

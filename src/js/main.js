@@ -17,6 +17,13 @@
       origin: 'right',
       interval: 100
     })
+    sr.reveal('.featurerevealing', {
+      duration: 600,
+      distance: '20px',
+      easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
+      origin: 'right',
+      interval: 100
+    })
 
     sr.reveal('.media-canvas', {
       duration: 600,
