@@ -7,14 +7,21 @@ window.onscroll = function () {
   // }
 
   var testDivFromTop = document.getElementById("container-scroll").offsetTop;
+  var testDivFromTop2 = document.getElementById("container-scroll2").offsetTop;
   var pageHeight = window.innerHeight;
   if (
-    document.body.scrollTop > testDivFromTop - pageHeight ||
-    document.documentElement.scrollTop > testDivFromTop - pageHeight
-  ) {
+    (document.documentElement.scrollTop > testDivFromTop - pageHeight ) &&  (document.documentElement.scrollTop < testDivFromTop2 + pageHeight ) && document.documentElement.scrollTop <=(testDivFromTop2-300)
+    // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
+    //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
+  ) {    
+    console.log( (testDivFromTop2))
     var title = this.document.getElementById("card-scroll");
-    var scrollTop = document.documentElement.scrollTop * 0.1;
-    title.style.transform =      "translateX(" + scrollTop + "px) translateY( -" + scrollTop + "px)";
-    // title.style.transform =      "translateX(-" + scrollTop + "px) translateY( -" + scrollTop + "px)";
+    var title2 = this.document.getElementById("card-scroll2");
+    // var scrollTop = 1*2;
+    var scrollTop = (((document.documentElement.scrollTop-testDivFromTop)*0.5));
+    var scrollTop2 = (((document.documentElement.scrollTop-testDivFromTop)*0.3));
+
+    title.style.transform =      "translateY(" + scrollTop + "px)";
+    title2.style.transform =      "translateX(" + scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
   }
 };
