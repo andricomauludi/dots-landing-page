@@ -8,9 +8,11 @@ window.onscroll = function () {
 
   var testDivFromTop = document.getElementById("container-scroll").offsetTop;
   var testDivFromTop2 = document.getElementById("container-scroll2").offsetTop;
+  var testDivFromTop3 = document.getElementById("container-scroll3").offsetTop;
+  var testDivFromTop4 = document.getElementById("container-scroll4").offsetTop;
   var pageHeight = window.innerHeight;
   if (
-    (document.documentElement.scrollTop > testDivFromTop - pageHeight ) &&  (document.documentElement.scrollTop < testDivFromTop2 + pageHeight ) && document.documentElement.scrollTop <=(testDivFromTop2-300)
+    (document.documentElement.scrollTop > testDivFromTop - pageHeight ) &&  (document.documentElement.scrollTop < testDivFromTop2 + pageHeight ) && document.documentElement.scrollTop <=(testDivFromTop2-100)
     // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
     //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
   ) {    
@@ -23,5 +25,21 @@ window.onscroll = function () {
 
     title.style.transform =      "translateY(" + scrollTop + "px)";
     title2.style.transform =      "translateX(" + scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
+  }
+  if (
+    (document.documentElement.scrollTop > testDivFromTop3 - pageHeight ) &&  (document.documentElement.scrollTop < testDivFromTop4 + pageHeight ) && document.documentElement.scrollTop <=(testDivFromTop4-100)
+    // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
+    //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
+    ) {    
+      var title = this.document.getElementById("card-scroll3");
+      var title2 = this.document.getElementById("card-scroll4");
+    // var scrollTop = 1*2;
+    var scrollTop = (((document.documentElement.scrollTop-testDivFromTop3)*0.5));
+    var scrollTop2 = (((document.documentElement.scrollTop-testDivFromTop4)*0.3));
+    console.log( (scrollTop2))
+
+
+    title.style.transform =      "translateY(" + scrollTop + "px)";
+    title2.style.transform =      "translateX(" + -(scrollTop2) + "px) translateY( " + (scrollTop2) + "px)";
   }
 };
