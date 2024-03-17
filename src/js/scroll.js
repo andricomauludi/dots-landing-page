@@ -15,8 +15,7 @@ window.onscroll = function () {
     (document.documentElement.scrollTop > testDivFromTop - pageHeight ) &&  (document.documentElement.scrollTop < testDivFromTop2 + pageHeight ) && document.documentElement.scrollTop <=(testDivFromTop2-100)
     // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
     //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
-  ) {    
-    console.log( (testDivFromTop2))
+  ) {        
     var title = this.document.getElementById("card-scroll");
     var title2 = this.document.getElementById("card-scroll2");
     // var scrollTop = 1*2;
@@ -35,8 +34,7 @@ window.onscroll = function () {
       var title2 = this.document.getElementById("card-scroll4");
     // var scrollTop = 1*2;
     var scrollTop = (((document.documentElement.scrollTop-testDivFromTop3)*0.5));
-    var scrollTop2 = (((document.documentElement.scrollTop-testDivFromTop4)*0.3));
-    console.log( (scrollTop2))
+    var scrollTop2 = (((document.documentElement.scrollTop-testDivFromTop4)*0.3));    
 
 
     title.style.transform =      "translateY(" + scrollTop + "px)";
