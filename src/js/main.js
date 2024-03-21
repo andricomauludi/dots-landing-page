@@ -17,11 +17,32 @@
       origin: 'right',
       interval: 100
     })
+    sr.reveal('.feature2', {
+      duration: 3000,
+      distance: '20px',
+      easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
+      origin: 'right',
+      interval: 100
+    })
     sr.reveal('.featurerevealing', {
       duration: 600,
       distance: '20px',
       easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
       origin: 'right',
+      interval: 100
+    })
+    sr.reveal('.featurerevealingleft', {
+      duration: 600,
+      distance: '20px',
+      easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
+      origin: 'left',
+      interval: 100
+    })
+    sr.reveal('.imagerevealing', {
+      duration: 1000,
+      distance: '20px',
+      easing: 'cubic-bezier(0.5, -0.01, 0, 1.005)',
+      origin: 'top',
       interval: 100
     })
 
