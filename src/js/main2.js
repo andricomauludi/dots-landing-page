@@ -76,7 +76,7 @@
 
   Bubble.prototype.randomise = function () {
     let self = this
-    self.colors = ['85,107,139', '38,141,247', '66,52,248', '255,108,80', '243, 244, 255', '96, 100, 131']
+    self.colors = ['114, 85, 139', '254, 254, 194', '254, 254, 194', '254, 254, 194', '243, 244, 255', '254, 254, 194']
     self.velocity = 30 // Bubble levitation velocity (the higher the slower)
     self.smoothFactor = 50 // The higher, the smoother
     self.staticity = 30 // Increase value to make bubbles move slower on mousemove

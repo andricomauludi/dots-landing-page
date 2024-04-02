@@ -188,7 +188,7 @@ Bubble.prototype.update = function () {
 
 Bubble.prototype.randomise = function () {
   let self = this
-  self.colors = ['114, 85, 139', '247, 38, 87', '248, 52, 183', '255,108,80', '243, 244, 255', '96, 100, 131']
+  self.colors = ['114, 85, 139', '254, 254, 194', '254, 254, 194', '254, 254, 194', '243, 244, 255', '254, 254, 194']
   self.velocity = 30 // Bubble levitation velocity (the higher the slower)
   self.smoothFactor = 50 // The higher, the smoother
   self.staticity = 30 // Increase value to make bubbles move slower on mousemove
@@ -206,7 +206,7 @@ Bubble.prototype.randomise = function () {
 
 let Background = function (selector) {
   let self = this
-  self.canvas = document.getElementById(selector)
+  self.canvas = document.getElementById("hero-particles")
   self.ctx = this.canvas.getContext('2d')
   self.dpr = window.devicePixelRatio
 }
