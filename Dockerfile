@@ -1,4 +1,2 @@
-FROM nginx
-COPY ./index.html /usr/share/nginx/html/index.html
-
-EXPOSE 3002
+FROM nginx:alpine
+COPY . /usr/share/nginx/html/
