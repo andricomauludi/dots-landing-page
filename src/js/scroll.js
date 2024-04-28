@@ -25,8 +25,6 @@ window.onscroll = function () {
     var scrollTop2 =
       (document.documentElement.scrollTop - testDivFromTop) * 0.3;
 
-    console.log("apa bego");
-
     title.style.transform = "translateY(" + scrollTop + "px)";
     title2.style.transform =
       "translateX(" + scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
