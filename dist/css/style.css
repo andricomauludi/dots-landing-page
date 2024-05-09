@@ -406,7 +406,7 @@ h6,
 }
 
 .text-secondary-cream{
-	color: #fefec2;
+	color: #f8f2ed;
 }
 .text-light h1,
 .text-light h2,
@@ -1078,23 +1078,23 @@ label {
 	box-shadow: 0 4px 16px rgba(6, 16, 31, 0.35);
 }
 .button-primary {
-	background-color: #fefec2;
+	background-color: #f8f2ed;
 }
 .button-primary:hover {
-	background: #ffffbd;
+	background: #b4b4b4;
 }
 .button-primary.button-shadow::before {
-	box-shadow: 0 8px 16px rgba(249, 66, 95, 0.25);
+	box-shadow: 0 8px 16px rgba(255, 255, 255, 0.25);
 	mix-blend-mode: normal;
 }
 .button-primary.button-shadow:hover::before {
-	box-shadow: 0 8px 16px rgba(249, 66, 95, 0.35);
+	box-shadow: 0 8px 16px rgba(255, 255, 255, 0.35);
 }
 .button-primary .button-sm.button-shadow::before {
-	box-shadow: 0 4px 16px rgba(249, 66, 95, 0.25);
+	box-shadow: 0 4px 16px rgba(255, 255, 255, 0.25);
 }
 .button-primary .button-sm.button-shadow:hover::before {
-	box-shadow: 0 4px 16px rgba(249, 66, 95, 0.35);
+	box-shadow: 0 4px 16px rgba(255, 255, 255, 0.35);
 }
 .button-block {
 	display: flex;
@@ -2353,8 +2353,8 @@ main {
 	color: #fff;
 }
 #showcase .gradient-bg {
-	background: #FEFEC2;
-	background: linear-gradient(95deg, #FEFEC2 40%, #eeee8f 100%);
+	background: #f8f2ed;
+	background: linear-gradient(95deg, #f8f2ed 40%, #878787 100%);
 	padding: 119px 0px 80px 0px;
 }
 #showcase .showcase-slider .owl-controls .owl-page.active span,
@@ -2478,7 +2478,7 @@ main {
 
 .border-font {
 	color: #0f0f0f;
-	text-shadow: 0 0 1px #FEFEC2, 0 0 1px #FEFEC2, 0 0 1px #FEFEC2, 0 0 1px #FEFEC2;
+	text-shadow: 0 0 1px #f8f2ed, 0 0 1px #f8f2ed, 0 0 1px #f8f2ed, 0 0 1px #f8f2ed;
 }
 
 .color-primary {
@@ -2518,11 +2518,11 @@ main {
 	height: 300px;
 	background: linear-gradient(
 	  45deg,
-	  #FEFEC2 10%,
+	  #f8f2ed 10%,
 	  transparent 10%,
 	  transparent 50%,
-	  #FEFEC2 50%,
-	  #FEFEC2 60%,
+	  #f8f2ed 50%,
+	  #f8f2ed 60%,
 	  transparent 60%,
 	  transparent 100%
 	);
