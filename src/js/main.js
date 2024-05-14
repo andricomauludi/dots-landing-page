@@ -67,26 +67,26 @@
     deviceMockup.addEventListener("load", deviceMockupLoaded);
   }
 
-  // Features title adjustment
-  const featuresSection = document.querySelector(".features");
-  const featuresTitle = featuresSection.querySelector(".section-title");
-  const firstFeature = document.querySelector(".feature-inner");
+  // // Features title adjustment
+  // const featuresSection = document.querySelector(".features");
+  // const featuresTitle = featuresSection.querySelector(".section-title");
+  // const firstFeature = document.querySelector(".feature-inner");
 
-  featuresTitlePos();
-  win.addEventListener("resize", featuresTitlePos);
+  // featuresTitlePos();
+  // win.addEventListener("resize", featuresTitlePos);
 
-  function featuresTitlePos() {
-    let featuresSectionLeft = featuresSection
-      .querySelector(".features-inner")
-      .getBoundingClientRect().left;
-    let firstFeatureLeft = firstFeature.getBoundingClientRect().left;
-    let featuresTitleOffset = parseInt(firstFeatureLeft - featuresSectionLeft);
-    if (firstFeatureLeft > featuresSectionLeft) {
-      featuresTitle.style.marginLeft = `${featuresTitleOffset}px`;
-    } else {
-      featuresTitle.style.marginLeft = 0;
-    }
-  }
+  // function featuresTitlePos() {
+  //   let featuresSectionLeft = featuresSection
+  //     .querySelector(".features-inner")
+  //     .getBoundingClientRect().left;
+  //   let firstFeatureLeft = firstFeature.getBoundingClientRect().left;
+  //   let featuresTitleOffset = parseInt(firstFeatureLeft - featuresSectionLeft);
+  //   if (firstFeatureLeft > featuresSectionLeft) {
+  //     featuresTitle.style.marginLeft = `${featuresTitleOffset}px`;
+  //   } else {
+  //     featuresTitle.style.marginLeft = 0;
+  //   }
+  // }
 
   // Moving objects
   const movingObjects = document.querySelectorAll(".is-moving-object");
