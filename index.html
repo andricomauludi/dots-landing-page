@@ -24,7 +24,7 @@
 <body class="is-boxed has-animations">
 	<!-- <div class="body-wrap boxed-container"> -->
 	<div class="body-wrap">
-		<nav class="navbar fixed-top navbar-dark" style="background-color: #0F0F0F;">
+		<nav class="navbar fixed-top navbar-dark" style="background-color: #1C1717;">
 			<a class="navbar-brand" href="#" style="margin-left: 30px;">
 				<img src="./dist/images/dots-logo-white.png" width="100" height="30" alt="">
 			</a>
@@ -68,7 +68,7 @@
 
 		<main>
 			<!-- <section class="hero text-center text-light" style="height: 700px"> -->
-			<section class="text-center text-light" style="height: 700px">
+			<section class="text-center text-light" style="height: 1000px">
 				<div class="hero-bg"></div>
 				<div class="hero-particles-container">
 					<canvas id="hero-particles"></canvas>
@@ -104,7 +104,7 @@
 			</section>
 
 			<!-- logo dots -->
-			<section class="hero" style="margin-bottom: 100px; margin-top: 200px">
+			<section class="hero">
 				<div class="container">
 					<div class="hero-inner">
 						<div class="hero-copy">
@@ -684,6 +684,7 @@
 
 			<!-- penjelasan kedua untuk dots -->
 			<section class="" style="background-color: #F8F2ED;">
+				<div class="svgbackgroundright"></div>
 				<!-- <section class="hero" > -->
 				<div class="container">
 					<div>
@@ -754,7 +755,8 @@
 							</div>
 							<div class="col">
 								<div class="row" style="margin-top: 25%;">
-									<img class="" src="dist/images/dots-photos-1.jpeg" alt="App preview" />
+									<img class="" style="z-index: 1;" src="dist/images/dots-photos-1.jpeg"
+										alt="App preview" />
 								</div>
 							</div>
 						</div>
@@ -776,7 +778,7 @@
 							</div>
 							<div class="col">
 								<div id="container-scroll3" class="row" style="margin-top: 50%;">
-									<div id="card-scroll3" class="card" style="background-color: #2d2d2d;">
+									<div id="card-scroll3" class="card" style="background-color: #2d2d2d; z-index: 2;">
 										<div class="card-body text-light" style="padding:50px">
 											<h1 class="hero-title mt-0 featurerevealing">We are here to live
 												up
@@ -793,7 +795,7 @@
 										</div>
 									</div>
 									<div id="card-scroll4" class=""
-										style="background-color: #b4b4b4; margin-top: 250px;">
+										style="background-color: #b4b4b4; margin-top: 250px; z-index: 2;">
 										<div class="card-body" style="">
 											<h1 class="hero-title mt-0 text-dark first-text-display">Solutions</h1>
 											<!-- <div class="card" style="background-color: rgb(255, 48, 158);"> -->
@@ -828,71 +830,67 @@
 			</section>
 			<!-- Our Services -->
 
-			<section class="features section block-parallax-services">				
-					<!-- <h2 class="section-title text-secondary-cream mt-0 first-text-display">Services We Provide</h2> -->
+			<section class="features section block-parallax-services">
+				<!-- <h2 class="section-title text-secondary-cream mt-0 first-text-display">Services We Provide</h2> -->
 
-					<div class="parallax-bg"></div>
-					<div class="md-box">
-						<h1 id="buttoncoba" style="margin-bottom: 80px;" class="first-text-display">Services</h1>
-						<h5 id="buttoncoba" class="first-text-display">Digital Branding</h5>
-						<svg width="100%" height="400px">
-							<!-- diagonal kiri -->
-							<line x1="20%" y1="50%" x2="50%" y2="90%"
-								style="stroke:rgb(254, 254, 254); stroke-width:2" />
-							<!-- diagonal kanan -->
-							<line x1="50%" y1="90%" x2="80%" y2="50%"
-								style="stroke:rgb(255, 255, 255); stroke-width:2" />
-							<!-- vertikal bawah -->
-							<line x1="50%" y1="50%" x2="50%" y2="90%"
-								style="stroke:rgb(248, 248, 248); stroke-width:2" />
-							<!-- vertikal atas -->
-							<line x1="50%" y1="0%" x2="50%" y2="20%"
-								style="stroke:rgb(255, 255, 255); stroke-width:2" />
+				<div class="parallax-bg"></div>
+				<div class="md-box">
+					<h1 id="buttoncoba" style="margin-bottom: 80px;" class="first-text-display">Services</h1>
+					<h5 id="buttoncoba" class="first-text-display services-hover">Digital Branding</h5>
+					<svg width="100%" height="400px">
+						<!-- diagonal kiri -->
+						<line x1="20%" y1="50%" x2="50%" y2="90%" style="stroke:rgb(254, 254, 254); stroke-width:2" />
+						<!-- diagonal kanan -->
+						<line x1="50%" y1="90%" x2="80%" y2="50%" style="stroke:rgb(255, 255, 255); stroke-width:2" />
+						<!-- vertikal bawah -->
+						<line x1="50%" y1="50%" x2="50%" y2="90%" style="stroke:rgb(248, 248, 248); stroke-width:2" />
+						<!-- vertikal atas -->
+						<line x1="50%" y1="0%" x2="50%" y2="20%" style="stroke:rgb(255, 255, 255); stroke-width:2" />
 
 
-						</svg>
-						<div style="margin-top:-275px; margin-bottom:225px;" class="row">
-							<div class="col">
-								<h6 style="" class="first-text-display">Photography Medical</h6>
+					</svg>
+					<div style="margin-top:-275px; margin-bottom:225px;" class="row">
+						<div class="col">
+							<h6 class="first-text-display services-hover">Photography Medical</h6>
+						</div>
+						<div class="col">
+							<h6 class="first-text-display services-hover">Videography Medical</h6>
+						</div>
+						<div class="col">
+							<h6 class="first-text-display services-hover">Content Design</h6>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col services-hover">
+							<div class="row">
+
+								<h6 style="" class="first-text-display">Instagram</h6>
 							</div>
-							<div class="col">
-								<h6 style="" class="first-text-display">Videography Medical</h6>
-							</div>
-							<div class="col">
-								<h6 style="" class="first-text-display">Content Design</h6>
+							<div class="row">
+								<h6 style="" class="first-text-display">Maintenance</h6>
+
 							</div>
 						</div>
-						<div class="row">
-							<div class="col">
-								<div class="row">
+						<div class="col services-hover">
+							<div class="row">
 
-									<h6 style="" class="first-text-display">Instagram</h6>
-								</div>
-								<div class="row">
-									<h6 style="" class="first-text-display">Maintenance</h6>
-
-								</div>
+								<h6 style="" class="first-text-display">Tiktok</h6>
 							</div>
-							<div class="col">
-								<div class="row">
+							<div class="row">
 
-									<h6 style="" class="first-text-display">Tiktok</h6>
-								</div>
-								<div class="row">
-
-									<h6 style="" class="first-text-display">Maintenance</h6>
-								</div>
-							</div>
-							<div class="col">
-								<div class="row">
-									<h6 style="" class="first-text-display">Youtube</h6>
-								</div>
-								<div class="row">
-									<h6 style="" class="first-text-display">Channel</h6>
-								</div>
+								<h6 style="" class="first-text-display">Maintenance</h6>
 							</div>
 						</div>
-					</div>				
+						<div class="col services-hover">
+							<div class="row">
+								<h6 style="" class="first-text-display">Youtube</h6>
+							</div>
+							<div class="row">
+								<h6 style="" class="first-text-display">Channel</h6>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<!-- latest work -->
@@ -971,61 +969,75 @@
 					src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 				<div class="container">
 					<div class="row">
-						<div class="col">
-							<div class="row text-light">
-								<div class="col text-center">
-									<h1 style="font-size: 100px;" class="statistic-counter border-font">200</h1>
-								</div>
-								<div class="col ">
-									<span></span>
-									<h4 class="first-text-display">People followed us</h4>
-									<p>Yes, they are interested with our contents.</p>
-								</div>
-							</div>
-							<!-- <i class="fa fa-briefcase m-b-1"></i> -->
+
+						<div class="col-6"
+							style="height: 600px; width: 600px;  position: relative; align-items: center; align-content: center;">
+							<img src="dist/images/png/counter-graphic.png" alt=""
+								style="object-fit: cover; width: 100%; height: 100%;" />
+
 						</div>
-						<div class="col">
-							<!-- <i class="fa fa-briefcase m-b-1"></i> -->
-							<div class="row text-light">
-								<div class="col text-center">
-									<h1 style="font-size: 100px; " class="statistic-counter border-font">12</h1>
+						<div class="col-6">
+							<div class="row">
+								<div class="col">
+									<div class="row text-light">
+										<div class="row text-center">
+											<h1 style="font-size: 100px;" class="statistic-counter border-font">200</h1>
+										</div>
+										<div class="row ">
+											<span></span>
+											<h5 class="first-text-display">People followed us</h5>
+											<p>Yes, they are interested with our contents.</p>
+										</div>
+									</div>
+									<!-- <i class="fa fa-briefcase m-b-1"></i> -->
 								</div>
-								<div class="col justify-content-center">
-									<span></span>
-									<h4 class="first-text-display">Clients trust us</h4>
-									<p>We hope you are our next client!</p>
+								<div class="col">
+									<!-- <i class="fa fa-briefcase m-b-1"></i> -->
+									<div class="row text-light">
+										<div class="row text-center">
+											<h1 style="font-size: 100px; " class="statistic-counter border-font">12</h1>
+										</div>
+										<div class="row justify-content-center">
+											<span></span>
+											<h5 class="first-text-display">Clients trust us</h5>
+											<p>We hope you are our next client!</p>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
 
 
-					</div>
-					<div class="row mt-3">
-						<div class="col">
-							<!-- <i class="fa fa-briefcase m-b-1"></i> -->
-							<div class="row text-light">
-								<div class="col text-center">
-									<h1 style="font-size: 100px; " class="statistic-counter border-font">400</h1>
+							</div>
+							<div class="row mt-3">
+								<div class="col">
+									<!-- <i class="fa fa-briefcase m-b-1"></i> -->
+									<div class="row text-light">
+										<div class="row text-center">
+											<h1 style="font-size: 100px; " class="statistic-counter border-font">400
+											</h1>
+										</div>
+										<div class="row justify-content-center">
+											<span></span>
+											<h5 class="first-text-display">Posts that we published.</h5>
+											<p>We love to publish our contents, many more to go!</p>
+										</div>
+									</div>
 								</div>
-								<div class="col justify-content-center">
-									<span></span>
-									<h4 class="first-text-display">Posts that we published.</h4>
-									<p>We love to publish our contents, many more to go!</p>
+								<div class="col">
+									<!-- <i class="fa fa-briefcase m-b-1"></i> -->
+									<div class="row text-light">
+										<div class="row text-center">
+											<h1 style="font-size: 100px; " class="statistic-counter border-font">1420
+											</h1>
+										</div>
+										<div class="row justify-content-center">
+											<span></span>
+											<h5 class="first-text-display">Viewers loves us</h5>
+											<p>Make your content engage more views with us, lets go!</p>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col">
-							<!-- <i class="fa fa-briefcase m-b-1"></i> -->
-							<div class="row text-light">
-								<div class="col text-center">
-									<h1 style="font-size: 100px; " class="statistic-counter border-font">1420</h1>
-								</div>
-								<div class="col justify-content-center">
-									<span></span>
-									<h4 class="first-text-display">Viewers loves us</h4>
-									<p>Make your content engage more views with us, lets go!</p>
-								</div>
-							</div>
+
 						</div>
 					</div>
 				</div>
@@ -1908,7 +1920,7 @@
 
 
 			<!-- Member team -->
-			<section class="svgbackgroundright" style="margin-top: 100px;">
+			<section class="hero2" style="margin-top: 100px;">
 				<div class="container" style="padding: 0;">
 					<!-- <div class="row">						
 						<h4 class="text-white">
@@ -1916,36 +1928,33 @@
 						</h4>						
 					</div> -->
 					<div class="row">
-						<div class="col justify-content-center text-light" style="margin: 50px;">
-							<div class="justify-content-center">
-								<div class="row">
-									<div class="col-4" style="height: 800px; width: 400px;  position: relative;">
+						<div class="justify-content-center text-light">
+							<div class="row">
+								<!-- <div class="col-4" style="height: 800px; width: 400px;  position: relative;">
 										<img src="./dist/images/dots-logo-members.jpeg" alt=""
 											style="object-fit: cover; width: 100%; height: 100%;" />
 
+									</div> -->
+								<div class="col-6 text-center" style="position: relative; margin: auto;">
+									<h1 class="hero-title mt-0 text-secondary-cream">Say hello to us.</h1>
+									<div class="row justify-content-center mb-4">
+										Get to know our team!
 									</div>
-									<div class="col-4 text-center" style="position: relative;">
-										<div class="align-middle">
-											<h1 class="hero-title mt-0 text-secondary-cream">Say hello to us.</h1>
-											<div class="row justify-content-center mb-4">
-												Get to know our team!
-											</div>
-											<div class="row" style="margin: 50px;">
-												<a href="./about.html">
-													<button class="button button-primary button-shadow text-dark">
-														Go to About Us
-													</button>
-												</a>
-											</div>
-										</div>
+									<div class="row" style="margin: 50px;">
+										<a href="./about.html">
+											<button class="button button-primary button-shadow text-dark">
+												Go to About Us
+											</button>
+										</a>
+									</div>
 
-									</div>
-									<div class="col-4 text-right"
-										style="height: 800px; width: 400px;  position: relative;">
-										<img src="./dist/images/members.png" alt=""
+								</div>
+								<div class="col-6" style="text-align: right">
+									<div style="height: 600px; width: 600px; margin-left: auto; text-align: right">
+										<img src="./dist/images/png/hello-graphic.png" alt=""
 											style="object-fit: cover; width: 100%; height: 100%;" />
-
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -1981,8 +1990,10 @@
 								<div>
 									<h1 class="featurerevealingleft text-secondary-cream">We are ready to help you</h1>
 									<p class="featurerevealingleft">see our portfolio and contact us</p>
-									
-									<a target="_blank" href="./src/pdf/pitch_deck.pdf" download="DOTS-Portfolio"><button class="button button-primary text-dark featurerevealingleft">Download Portfolio</button></a>
+
+									<a target="_blank" href="./src/pdf/pitch_deck.pdf" download="DOTS-Portfolio"><button
+											class="button button-primary text-dark featurerevealingleft">Download
+											Portfolio</button></a>
 
 								</div>
 							</div>
