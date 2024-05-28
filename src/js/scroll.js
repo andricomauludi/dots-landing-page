@@ -72,21 +72,64 @@ window.onscroll = function () {
     //       }
     //     );
     // });
-    $(".statistic-counter").each(function () {
-      $(this)
-        .prop("Counter", 0)
-        .animate(
-          {
-            Counter: $(this).text(),
-          },
-          {
-            duration: 4000,
-            easing: "swing",
-            step: function (now) {
-              $(this).text(Math.ceil(now));
-            },
-          }
-        );
-    });
+    // $(".statistic-counter").each(function () {
+    //   $(this)
+    //     .prop("Counter", 0)
+    //     .animate(
+    //       {
+    //         Counter: $(this).text(),
+    //       },
+    //       {
+    //         duration: 4000,
+    //         easing: "swing",
+    //         step: function (now) {
+    //           $(this).text(Math.ceil(now));
+    //         },
+    //       }
+    //     );
+    // });
   }
+};
+
+let interval = 1; // The delay in milliseconds between updates
+
+function updateCounter(target, counterDiv) {
+  let count = 0;
+  function increment() {
+    if (count < target) {
+      count++;
+      counterDiv.textContent = count;
+      setTimeout(increment, interval);
+    }
+  }
+  increment();
+}
+
+// Start all counters simultaneously
+function startAllCounters(maxTarget) {
+  let targetValues = [200, 12, 400, 1420]; // Target values for each counter
+
+  let counterDivs = document.querySelectorAll(".counter");
+
+  counterDivs.forEach((counterDiv, index) => {
+    let target = targetValues[index];
+    counterDiv.textContent = 0; // Set initial value
+    updateCounter(target, counterDiv);
+  });
+}
+
+// Set up the Intersection Observer
+let observer = new IntersectionObserver((entries) => {
+  if (entries.some((entry) => entry.isIntersecting)) {
+    startAllCounters();
+    entries.forEach((entry) => observer.unobserve(entry.target)); // Stop observing once the counters have started
+  }
+});
+
+// Start observing each counter container
+window.onload = function () {
+  let counterContainers = document.querySelectorAll(".counter-container");
+  counterContainers.forEach((container) => {
+    observer.observe(container);
+  });
 };
