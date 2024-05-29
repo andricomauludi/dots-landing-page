@@ -41,58 +41,56 @@
     <div class="content">Scroll down to see the counters</div>
     <div class="counter-container" id="counter1">
         <!-- Counter container for 100 -->
-        <div class="counter"></div>
+        <div class="counter" data-target="12"></div>
     </div>
     <div class="counter-container" id="counter2">
         <!-- Counter container for 150 -->
-        <div class="counter"></div>
+        <div class="counter" data-target="200"></div>
     </div>
     <div class="counter-container" id="counter3">
         <!-- Counter container for 200 -->
-        <div class="counter"></div>
+        <div class="counter" data-target="450"></div>
     </div>
     <div class="counter-container" id="counter4">
         <!-- Counter container for 250 -->
-        <div class="counter"></div>
+        <div class="counter" data-target="1420"></div>
     </div>
     <div class="counter-container" id="counter5">
         <!-- Counter container for 300 -->
-        <div class="counter"></div>
+        <div class="counter" data-target="300"></div>
     </div>
     <div class="counter-container" id="counter6">
         <!-- Counter container for 350 -->
-        <div class="counter"></div>
+        <div class="counter" data-target="350"></div>
     </div>
 
     <script>
-        let interval = 10; // The delay in milliseconds between updates
+        const duration = 2000; // Total duration in milliseconds for the counters to finish
 
         function updateCounter(target, counterDiv) {
             let count = 0;
-            function increment() {
+            const increment = target / (duration / 10); // Number to increment each time (adjusting for interval of 10ms)
+            function incrementCounter() {
                 if (count < target) {
-                    count++;
-                    counterDiv.textContent = count;
-                    setTimeout(increment, interval);
+                    count += increment;
+                    if (count > target) count = target; // Ensure count doesn't exceed target
+                    counterDiv.textContent = Math.ceil(count);
+                    setTimeout(incrementCounter, 10); // Update every 10ms
                 }
             }
-            increment();
+            incrementCounter();
         }
 
-        // Start all counters simultaneously
-        function startAllCounters(maxTarget) {
-            let targetValues = [100, 150, 200, 250, 300, 1420]; // Target values for each counter
-
+        function startAllCounters() {
             let counterDivs = document.querySelectorAll('.counter');
 
-            counterDivs.forEach((counterDiv, index) => {
-                let target = targetValues[index];
+            counterDivs.forEach(counterDiv => {
+                let target = parseInt(counterDiv.getAttribute('data-target'), 10);
                 counterDiv.textContent = 0; // Set initial value
                 updateCounter(target, counterDiv);
             });
         }
 
-        // Set up the Intersection Observer
         let observer = new IntersectionObserver(entries => {
             if (entries.some(entry => entry.isIntersecting)) {
                 startAllCounters();
@@ -100,7 +98,6 @@
             }
         });
 
-        // Start observing each counter container
         window.onload = function () {
             let counterContainers = document.querySelectorAll('.counter-container');
             counterContainers.forEach(container => {

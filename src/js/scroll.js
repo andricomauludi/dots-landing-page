@@ -91,34 +91,32 @@ window.onscroll = function () {
   }
 };
 
-let interval = 1; // The delay in milliseconds between updates
+const duration = 2000; // Total duration in milliseconds for the counters to finish
 
 function updateCounter(target, counterDiv) {
   let count = 0;
-  function increment() {
+  const increment = target / (duration / 10); // Number to increment each time (adjusting for interval of 10ms)
+  function incrementCounter() {
     if (count < target) {
-      count++;
-      counterDiv.textContent = count;
-      setTimeout(increment, interval);
+      count += increment;
+      if (count > target) count = target; // Ensure count doesn't exceed target
+      counterDiv.textContent = Math.ceil(count);
+      setTimeout(incrementCounter, 10); // Update every 10ms
     }
   }
-  increment();
+  incrementCounter();
 }
 
-// Start all counters simultaneously
-function startAllCounters(maxTarget) {
-  let targetValues = [200, 12, 400, 1420]; // Target values for each counter
-
+function startAllCounters() {
   let counterDivs = document.querySelectorAll(".counter");
 
-  counterDivs.forEach((counterDiv, index) => {
-    let target = targetValues[index];
+  counterDivs.forEach((counterDiv) => {
+    let target = parseInt(counterDiv.getAttribute("data-target"), 10);
     counterDiv.textContent = 0; // Set initial value
     updateCounter(target, counterDiv);
   });
 }
 
-// Set up the Intersection Observer
 let observer = new IntersectionObserver((entries) => {
   if (entries.some((entry) => entry.isIntersecting)) {
     startAllCounters();
@@ -126,7 +124,6 @@ let observer = new IntersectionObserver((entries) => {
   }
 });
 
-// Start observing each counter container
 window.onload = function () {
   let counterContainers = document.querySelectorAll(".counter-container");
   counterContainers.forEach((container) => {
