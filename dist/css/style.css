@@ -2548,6 +2548,27 @@ main {
 	animation: animate 0.3s linear infinite;
 }
 
+
+@media only screen and (max-width: 1400px) {
+	.container-portfolio .box-portfolio {
+		width: 200px;
+		height: 200px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.container-portfolio .box-portfolio {
+		width: 200px;
+		height: 200px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.container-portfolio .box-portfolio {
+		width: 50px;
+		height: 50px;
+	}
+}
+
 /* background our services */
 
 .block-parallax-services {
@@ -2595,19 +2616,6 @@ main {
 	}
 }
 
-@media only screen and (max-width: 768px) {
-	.container-portfolio .box-portfolio {
-		width: 200px;
-		height: 200px;
-	}
-}
-
-@media only screen and (max-width: 480px) {
-	.container-portfolio .box-portfolio {
-		width: 150px;
-		height: 150px;
-	}
-}
 
 /* Say hello to us */
 

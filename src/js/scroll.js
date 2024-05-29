@@ -5,48 +5,83 @@ window.onscroll = function () {
   //   var scrollTop = document.documentElement.scrollTop * 0.5;
   //   title.style.transform = "translateX(" + scrollTop + "px)";
   // }
+  const mediaQuery = window.matchMedia("(max-width: 600px)");
 
-  var testDivFromTop = document.getElementById("container-scroll").offsetTop;
-  var testDivFromTop2 = document.getElementById("container-scroll2").offsetTop;
-  var testDivFromTop3 = document.getElementById("container-scroll3").offsetTop;
-  var testDivFromTop4 = document.getElementById("container-scroll4").offsetTop;
-  var pageHeight = window.innerHeight;
-  if (
-    document.documentElement.scrollTop > testDivFromTop - pageHeight &&
-    document.documentElement.scrollTop < testDivFromTop2 + pageHeight &&
-    document.documentElement.scrollTop <= testDivFromTop2 - 100
-    // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
-    //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
-  ) {
-    var title = this.document.getElementById("card-scroll");
-    var title2 = this.document.getElementById("card-scroll2");
-    // var scrollTop = 1*2;
-    var scrollTop = (document.documentElement.scrollTop - testDivFromTop) * 0.5;
-    var scrollTop2 =
-      (document.documentElement.scrollTop - testDivFromTop) * 0.3;
-
-    title.style.transform = "translateY(" + scrollTop + "px)";
-    title2.style.transform =
-      "translateX(" + scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
+  // Function to handle media query status
+  function handleMediaQueryChange(event) {
+    if (event.matches) {
+      // JavaScript to stop or disable
+      console.log("Page width is less than 600px. Stopping JavaScript.");
+      // Add code to stop JavaScript here
+      // For example, you can remove event listeners, stop animations, etc.
+      stopJavaScript();
+    } else {
+      // JavaScript to enable
+      console.log(
+        "Page width is greater than or equal to 600px. Running JavaScript."
+      );
+      // Add code to run JavaScript here
+      startJavaScript();
+    }
   }
-  if (
-    document.documentElement.scrollTop > testDivFromTop3 - pageHeight &&
-    document.documentElement.scrollTop < testDivFromTop4 + pageHeight &&
-    document.documentElement.scrollTop <= testDivFromTop4 - 100
-    // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
-    //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
-  ) {
-    var title = this.document.getElementById("card-scroll3");
-    var title2 = this.document.getElementById("card-scroll4");
-    // var scrollTop = 1*2;
-    var scrollTop =
-      (document.documentElement.scrollTop - testDivFromTop3) * 0.5;
-    var scrollTop2 =
-      (document.documentElement.scrollTop - testDivFromTop4) * 0.3;
 
-    title.style.transform = "translateY(" + scrollTop + "px)";
-    title2.style.transform =
-      "translateX(" + -scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
+  // Initial check
+  handleMediaQueryChange(mediaQuery);
+
+  // Add event listener for changes in media query
+  mediaQuery.addListener(handleMediaQueryChange);
+
+  function stopJavaScript() {
+    // Implement code to stop specific JavaScript functionality
+  }
+
+  function startJavaScript() {
+    var testDivFromTop = document.getElementById("container-scroll").offsetTop;
+    var testDivFromTop2 =
+      document.getElementById("container-scroll2").offsetTop;
+    var testDivFromTop3 =
+      document.getElementById("container-scroll3").offsetTop;
+    var testDivFromTop4 =
+      document.getElementById("container-scroll4").offsetTop;
+    var pageHeight = window.innerHeight;
+    if (
+      document.documentElement.scrollTop > testDivFromTop - pageHeight &&
+      document.documentElement.scrollTop < testDivFromTop2 + pageHeight &&
+      document.documentElement.scrollTop <= testDivFromTop2 - 100
+      // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
+      //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
+    ) {
+      var title = this.document.getElementById("card-scroll");
+      var title2 = this.document.getElementById("card-scroll2");
+      // var scrollTop = 1*2;
+      var scrollTop =
+        (document.documentElement.scrollTop - testDivFromTop) * 0.5;
+      var scrollTop2 =
+        (document.documentElement.scrollTop - testDivFromTop) * 0.3;
+
+      title.style.transform = "translateY(" + scrollTop + "px)";
+      title2.style.transform =
+        "translateX(" + scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
+    }
+    if (
+      document.documentElement.scrollTop > testDivFromTop3 - pageHeight &&
+      document.documentElement.scrollTop < testDivFromTop4 + pageHeight &&
+      document.documentElement.scrollTop <= testDivFromTop4 - 100
+      // && (document.body.scrollTop < testDivFromTop2 - pageHeight ||
+      //   document.documentElement.scrollTop < testDivFromTop2 - pageHeight)
+    ) {
+      var title = this.document.getElementById("card-scroll3");
+      var title2 = this.document.getElementById("card-scroll4");
+      // var scrollTop = 1*2;
+      var scrollTop =
+        (document.documentElement.scrollTop - testDivFromTop3) * 0.5;
+      var scrollTop2 =
+        (document.documentElement.scrollTop - testDivFromTop4) * 0.3;
+
+      title.style.transform = "translateY(" + scrollTop + "px)";
+      title2.style.transform =
+        "translateX(" + -scrollTop2 + "px) translateY( " + scrollTop2 + "px)";
+    }
   }
 
   // -------------------------------
