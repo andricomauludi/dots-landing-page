@@ -1153,11 +1153,15 @@ label {
 	position: relative;
 }
 .image-dots-gone {
+	margin: auto;
 	display: block;
-	margin-top: -300px;
+	margin-top: -100px;
 	margin-bottom: 100px;
-	width: 528px;
+	width: 400px;
+	z-index: 2; /* Higher z-index */
+	position: relative; /* Ensure it is positioned */
 }
+
 @media (min-width: 641px) {
 	.hero {
 		padding-top: 80px;
@@ -1178,6 +1182,26 @@ label {
 		display: none;
 		position: relative;
 	}
+	.hero-square-1 {
+		top: -270px;
+		left: 150px;
+	}
+	.hero-square-2 {
+		top: -42px;
+		left: 600px;
+	}
+	.hero-square-3 {
+		top: 46px;
+		left: 74px;
+	}
+	.hero-square-5 {
+		top: 108px;
+		left: 633px;
+	}
+	.hero-square-6 {
+		top: 140px;
+		left: 185px;
+	}
 }
 
 .hero-bg,
@@ -1188,28 +1212,38 @@ label {
 	transform-origin: 50% 50%;
 }
 .hero-square-1 {
-	top: -270px;
-	left: 150px;
+	top: -300px;
+	left: 0px;
+	z-index: 1; /* Lower z-index */
+	position: relative; /* Ensure it is positioned */
 }
 .hero-square-2 {
-	top: -42px;
-	left: 600px;
+	top: -500px;
+	left: 250px;
+	z-index: 1; /* Lower z-index */
+	position: relative; /* Ensure it is positioned */
 }
 .hero-square-3 {
-	top: 46px;
-	left: 74px;
+	top: -400px;
+	left: 100px;
+	z-index: 1; /* Lower z-index */
+	position: relative; /* Ensure it is positioned */
 }
 .hero-square-4 {
 	top: 0;
 	left: 250px;
 }
 .hero-square-5 {
-	top: 108px;
-	left: 633px;
+	top: -500px;
+	left: 200px;
+	z-index: 1; /* Lower z-index */
+	position: relative; /* Ensure it is positioned */
 }
 .hero-square-6 {
-	top: 140px;
-	left: 185px;
+	top: -700px;
+	left: 200px;
+	z-index: 1; /* Lower z-index */
+	position: relative; /* Ensure it is positioned */
 }
 .hero-square-7 {
 	top: 336px;
@@ -2601,11 +2635,17 @@ main {
 		width: 200px;
 		height: 200px;
 	}
+	.text-counter-centered {
+		text-align: center;
+	}
 }
 @media only screen and (max-width: 768px) {
 	.container-portfolio .box-portfolio {
 		width: 200px;
 		height: 200px;
+	}
+	.text-counter-centered {
+		text-align: center;
 	}
 }
 
@@ -2613,6 +2653,9 @@ main {
 	.container-portfolio .box-portfolio {
 		width: 200px;
 		height: 200px;
+	}
+	.text-counter-centered {
+		text-align: center;
 	}
 }
 
