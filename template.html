@@ -30,15 +30,17 @@
         .template-card {
             width: calc(25% - 20px);
             border: 1px solid #ccc;
-            border-radius: 8px;
+            border-radius: 25px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            transition: 0.5s ease;
             margin-bottom: 20px;
         }
 
         .template-card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+            transition: 0.5s ease;
         }
 
         .template-card img {
@@ -49,13 +51,14 @@
 
         .template-card .description {
             padding: 10px;
-            background-color: #f2f2f2;
+            background-color: #1C1717;
+            color: white;
         }
 
         .template-card h3 {
             margin-top: 0;
             font-size: 16px;
-            color: #333;
+            color: #ccc;
         }
     </style>
 
@@ -118,7 +121,7 @@
                     <h2 class="first-text-display" style="margin-bottom: 50px;">Template Website yang Tersedia</h2>
                     <ul class=" template-list">
                         <li class="template-card">
-                            <a href="http://20.195.42.22:3000/index.html">
+                            <a href="http://20.195.42.22:3003/index.html">
                                 <img src="./dist/images/template1.png" alt="Template 1">
                             </a>
                             <div class="description">
@@ -137,11 +140,20 @@
                         </li>                        
                         <li class="template-card">
                             <a href="http://20.195.42.22:3002/index.html">
-                                <img src="./dist/images/template3.png" alt="Template 2">
+                                <img src="./dist/images/template3.png" alt="Template 3">
                             </a>
                             <div class="description">
                                 <h3>Template Toko Kacamata</h3>
                                 <p>Website berisi toko online kacamata</p>
+                            </div>
+                        </li>                        
+                        <li class="template-card">
+                            <a href="http://20.195.42.22:3004">
+                                <img src="./dist/images/template4.png" alt="Template 4">
+                            </a>
+                            <div class="description">
+                                <h3>Template Toko Kecantikan</h3>
+                                <p>Website berisi brand sabun kecantikan</p>
                             </div>
                         </li>                        
                         <!-- Ganti path-to-image dengan path atau URL gambar template yang kamu miliki -->
