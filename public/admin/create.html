@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tulis Artikel</title>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <style>
+    #editor { height: 300px; }
+    .ql-toolbar.ql-snow { margin-bottom: 10px; }
+  </style>
+  <script>
+    if (!localStorage.getItem("user")) {
+      alert("Anda harus login dulu!");
+      window.location.href = "/login.html";
+    }
+  </script>
+  
+</head>
+<body>
+  <h1>Tulis Artikel</h1>
+  <input type="text" id="title" placeholder="Judul artikel" />
+  
+  <!-- Toolbar bawaan Quill -->
+  <div id="editor"></div>
+  <button onclick="submitPost()">📝 Simpan</button>
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script>
+    const fullToolbar = [
+      [{ 'header': [1, 2, 3, false] }],
+      ['bold', 'italic', 'underline'],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      ['image', 'link'],
+      ['clean']
+    ];
+
+    const quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: {
+          container: fullToolbar,
+          handlers: {
+            image: customImageHandler
+          }
+        }
+      }
+    });
+
+    // Custom handler gambar
+    function customImageHandler() {
+      const input = document.createElement('input');
+      input.setAttribute('type', 'file');
+      input.setAttribute('accept', 'image/*');
+      input.click();
+
+      input.onchange = () => {
+        const file = input.files[0];
+        const formData = new FormData();
+        formData.append('image', file);
+
+        fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+          const range = quill.getSelection();
+          quill.insertEmbed(range.index, 'image', data.url);
+        });
+      };
+    }
+
+    function submitPost() {
+      const title = document.getElementById("title").value;
+      const content = quill.root.innerHTML;
+
+      fetch('/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, content })
+      }).then(res => res.json()).then(() => {
+        window.location.href = "/admin/index.html";
+      });
+    }
+  </script>
+</body>
+</html>

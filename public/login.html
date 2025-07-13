@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login Admin</h2>
+  <input type="text" id="username" placeholder="Username" /><br /><br />
+  <input type="password" id="password" placeholder="Password" /><br /><br />
+  <button onclick="login()">🔐 Login</button>
+  <a href="/index.html" class="btn btn-primary" rel="noopener noreferrer">
+    Back to client site
+  </a>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password })
+      })
+        .then(res => {
+          if (!res.ok) throw new Error("Login gagal");
+          return res.json();
+        })
+        .then(data => {
+          // Simpan token login (misal username saja untuk sekarang)
+          localStorage.setItem("user", data.username);
+          alert("Login berhasil");
+          window.location.href = "/admin/index.html";
+        })
+        .catch(err => alert("Login gagal!"));
+    }
+  </script>
+</body>
+</html>

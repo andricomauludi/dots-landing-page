@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Artikel</title>
+		<style>
+			button {
+				margin-right: 10px;
+				padding: 5px 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content"></div>
+
+		<script>
+			const id = new URLSearchParams(window.location.search).get("id");
+
+			fetch(`/api/posts/${id}`)
+				.then((res) => res.json())
+				.then((post) => {
+					document.title = post.title;
+
+					const tempDiv = document.createElement("div");
+					tempDiv.innerHTML = post.content;
+
+					document.getElementById("content").innerHTML = `
+                        <h1>${post.title}</h1>
+                        <small style="color:gray;">🕒 ${post.timestamp}</small>
+                        <div>${post.content}</div>
+                        
+                        <br/>
+                        <button onclick="goEdit()">✏️ Edit</button>
+                        <button onclick="deletePost()">🗑️ Delete</button>
+                    `;
+				});
+
+			function goEdit() {
+				window.location.href = `/admin/edit.html?id=${id}`;
+			}
+
+			function deletePost() {
+				if (confirm("Yakin mau hapus artikel ini?")) {
+					fetch(`/api/posts/${id}`, {
+						method: "DELETE",
+					}).then(() => {
+						alert("Artikel berhasil dihapus.");
+						window.location.href = "/admin/index.html";
+					});
+				}
+			}
+		</script>
+	</body>
+</html>

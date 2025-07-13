@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DOTS - Articles</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Playfair+Display:700"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../dist/css/style.css" />
+		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+		<link rel="icon" href="../dist/images/dots-logo-white.png" />
+		<script
+			src="https://kit.fontawesome.com/37a99c8bdf.js"
+			crossorigin="anonymous"
+		></script>
+
+		<style>
+			.template-list {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+
+			.template-card {
+				width: calc(25% - 20px);
+				border: 1px solid #ccc;
+				border-radius: 25px;
+				overflow: hidden;
+				box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+				transition: 0.5s ease;
+				margin-bottom: 20px;
+			}
+
+			.template-card:hover {
+				box-shadow: 0 8px 16px rgba(255, 255, 255, 1);
+				transform: scale(1.1);
+				transition: 0.5s ease;
+			}
+
+			.template-card img {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+			}
+
+			.template-card .description {
+				padding: 10px;
+				background-color: #1c1717;
+				color: white;
+			}
+
+			.template-card h3 {
+				margin-top: 0;
+				font-size: 16px;
+				color: #ccc;
+			}
+			#create-btn {
+				display: inline-block;
+				margin-bottom: 20px;
+				padding: 10px 15px;
+				background-color: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			#create-btn:hover {
+				background-color: #0056b3;
+			}
+			.card {
+				background-color: white;
+				border: 1px solid #ccc;
+				border-radius: 10px;
+				padding: 15px;
+				margin-bottom: 20px;
+				display: flex;
+				gap: 15px;
+				align-items: flex-start;
+			}
+			.card img {
+				width: 120px;
+				height: 80px;
+				object-fit: cover;
+				border-radius: 5px;
+			}
+			.card-content {
+				flex: 1;
+			}
+			.card-title {
+				margin: 0;
+			}
+			.card-snippet {
+				color: #555;
+			}
+			.card a {
+				display: inline-block;
+				margin-top: 10px;
+				color: #007bff;
+				text-decoration: none;
+			}
+			.card a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body class="is-boxed has-animations">
+		<!-- <div class="body-wrap boxed-container"> -->
+		<div class="body-wrap">
+			<!-- <nav class="navbar fixed-top navbar-dark" style="background-color: #0F0F0F;z-index: 1000000;"> -->
+			<nav
+				class="navbar navbar-expand-lg fixed-top navbar-dark"
+				style="background-color: #1c1717; z-index: 1000000"
+			>
+				<div class="container-fluid">
+					<a
+						class="navbar-brand"
+						href="./index.html"
+						style="margin-left: 30px"
+					>
+						<img
+							src="../dist/images/dots-logo-white.png"
+							width="100"
+							height="30"
+							alt=""
+						/>
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarScroll"
+						aria-controls="navbarScroll"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarScroll">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex">
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									style="font-family: Chillax-Regular"
+									aria-current="page"
+									href="./index.html"
+									>Home</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									style="font-family: Chillax-Regular"
+									href="./about.html"
+									>About</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link active"
+									style="font-family: Chillax-Bold"
+									href="#"
+									>Stuffs</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									target="_blank"
+									href="./src/pdf/pitch_deck.pdf"
+									download="DOTS-Portfolio"
+									class="nav-link"
+									style="font-family: Chillax-Regular"
+									>Portfolio</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<header class="site-header">
+				<div class="container"></div>
+			</header>
+
+			<main>
+				<!-- who you are, why you need us -->
+				<section class="block-parallax-1 block-parallax-2">
+					<div class="parallax-bg"></div>
+					<div class="md-box">
+						<h1 class="first-text-display" id="buttoncoba">
+							Our Stuffs
+						</h1>
+					</div>
+				</section>
+
+				<section style="margin-top: 100px">
+					<!-- <section class="svgbackgroundright"> -->
+					<div class="container mt-4 mb-4">
+						<h2
+							class="first-text-display"
+							style="margin-bottom: 50px"
+						>
+							Article
+						</h2>
+						<ul id="posts" class="template-list">
+							<!-- cards akan ditambahkan di sini -->
+						  </ul>
+						  
+						<!-- <ul class=" template-list">
+                        <li class="template-card">
+                            <a href="http://20.195.42.22:3003/index.html">
+                                <img src="./dist/images/template1.png" alt="Template 1">
+                            </a>
+                            <div class="description">
+                                <h3>Template Agensi</h3>
+                                <p>Website berisi agensi pendidikan di luar.</p>
+                            </div>
+                        </li>
+                        <li class="template-card">
+                            <a href="http://20.195.42.22:3001/index.html">
+                                <img src="./dist/images/template2.png" alt="Template 2">
+                            </a>
+                            <div class="description">
+                                <h3>Template Personal Portfolio</h3>
+                                <p>Website berisi portofolio senderhana</p>
+                            </div>
+                        </li>                        
+                        <li class="template-card">
+                            <a href="http://20.195.42.22:3002/index.html">
+                                <img src="./dist/images/template3.png" alt="Template 3">
+                            </a>
+                            <div class="description">
+                                <h3>Template Toko Kacamata</h3>
+                                <p>Website berisi toko online kacamata</p>
+                            </div>
+                        </li>                        
+                        <li class="template-card">
+                            <a href="http://20.195.42.22:3004">
+                                <img src="./dist/images/template4.png" alt="Template 4">
+                            </a>
+                            <div class="description">
+                                <h3>Template Toko Kecantikan</h3>
+                                <p>Website berisi brand sabun kecantikan</p>
+                            </div>
+                        </li>                                               
+                    </ul> -->
+					</div>
+				</section>
+				<section style="margin-top: 100px">
+					<!-- <section class="svgbackgroundright"> -->
+					<div class="container mt-4 mb-4">
+						<h2
+							class="first-text-display"
+							style="margin-bottom: 50px"
+						>
+							Website klien
+						</h2>
+						<ul class="template-list">
+							<li class="template-card">
+								<a href="https://tekadmandiriberjaya.com">
+									<img
+										src="./dist/images/client1.png"
+										alt="Client 1"
+									/>
+								</a>
+								<div class="description">
+									<h3>Tekad Mandiri Berjaya</h3>
+									<p>Website enterprise</p>
+								</div>
+							</li>
+							<!-- Ganti path-to-image dengan path atau URL gambar template yang kamu miliki -->
+						</ul>
+					</div>
+				</section>
+
+				<section>
+					<div class="container text-dark p-5">
+						<div class="row">
+							<div
+								class="justify-content-center text-center text-dark mb-5"
+							>
+								<h1 class="text-secondary-cream">Contact us</h1>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<div class="row">
+									<h1 class="text-secondary-cream">
+										Lets start working
+									</h1>
+								</div>
+								<div class="row">
+									<p class="text-light">
+										Kami siap melayani dan membantu anda.
+										Membangun personal branding yang sesuai
+										anda inginkan. Raih lebih banyak atensi
+										dari segala sisi dengan kami. Your
+										Imagination, comes to reality.
+									</p>
+								</div>
+								<div class="row">
+									<div class="col">
+										<a
+											href="https://www.instagram.com/dots.advertisingagency/"
+											target="_blank"
+											><i
+												class="fab fa-instagram fa-2x text-secondary-cream"
+											></i
+										></a>
+									</div>
+									<div class="col">
+										<a
+											href="https://api.whatsapp.com/message/MD5POAZ2XCU4L1?autoload=1&app_absent=0"
+											target="_blank"
+											><i
+												class="fab fa-whatsapp fa-2x text-secondary-cream"
+											></i
+										></a>
+									</div>
+									<div class="col">
+										<a
+											href="https://www.youtube.com/@dotscreativestudio"
+											target="_blank"
+											><i
+												class="fab fa-youtube fa-2x text-secondary-cream"
+											></i
+										></a>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="row">
+									<div class="mb-3">
+										<label
+											for="exampleFormControlInput1"
+											class="form-label text-light"
+											>Name</label
+										>
+										<input
+											type="text"
+											class="form-control"
+											id="exampleFormControlInput1"
+											placeholder="Your name"
+										/>
+									</div>
+									<div class="mb-3">
+										<label
+											for="exampleFormControlInput1"
+											class="form-label text-light"
+											>Email address</label
+										>
+										<input
+											type="email"
+											class="form-control"
+											id="exampleFormControlInput1"
+											placeholder="name@example.com"
+										/>
+									</div>
+									<div class="mb-3">
+										<label
+											for="exampleFormControlInput1"
+											class="form-label text-light"
+											>Subject</label
+										>
+										<input
+											type="text"
+											class="form-control"
+											id="exampleFormControlInput1"
+											placeholder="Subject"
+										/>
+									</div>
+									<div class="mb-3">
+										<label
+											for="exampleFormControlTextarea1"
+											class="form-label text-light"
+											>Message</label
+										>
+										<textarea
+											class="form-control"
+											id="exampleFormControlTextarea1"
+											rows="3"
+											placeholder="Insert your message"
+										></textarea>
+									</div>
+									<div class="mb-3">
+										<button
+											class="button button-primary button-shadow text-dark"
+										>
+											Submit
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="site-footer">
+				<div class="container">
+					<!-- <div class="row mt-5">
+				<div class="col" style="height: 100px; width: 100px;  position: relative;">
+					<img src="./dist/images/dots-logo-white.png" alt=""
+						style="object-fit: cover; width: 100%; height: 100%;" />
+
+				</div>
+				<div class="col">
+					<div class="row">
+						<h3>company</h3>
+						<ul>
+							<li>mantab</li>
+							<li>mantab</li>
+							<li>mantab</li>
+							<li>mantab</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="col">
+					<h1>mantab</h1>
+
+				</div>
+				<div class="col">
+					<h1>mantab</h1>
+
+				</div>
+			</div> -->
+					<div class="site-footer-inner has-top-divider">
+						<div class="brand footer-brand">
+							<a href="#">
+								<img
+									src="./dist/images/dots-logo-white.png"
+									alt=""
+									style="object-fit: cover; width: 200px"
+								/>
+							</a>
+						</div>
+						<ul class="footer-links list-reset">
+							<li>
+								<a href="#">Contact</a>
+							</li>
+							<li>
+								<a href="/about.html">About us</a>
+							</li>
+							<!-- <li>
+						<a href="#">FAQ's</a>
+					</li>
+					<li>
+						<a href="#">Support</a>
+					</li> -->
+						</ul>
+						<ul class="footer-social-links list-reset">
+							<li>
+								<a href="#">
+									<span class="screen-reader-text"
+										>Facebook</span
+									>
+									<svg
+										width="16"
+										height="16"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M6.023 16L6 9H3V6h3V4c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V6H13l-1 3H9.28v7H6.023z"
+											fill="#FFF"
+										/>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="screen-reader-text"
+										>Twitter</span
+									>
+									<svg
+										width="16"
+										height="16"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M16 3c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4C.7 7.7 1.8 9 3.3 9.3c-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H0c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4C15 4.3 15.6 3.7 16 3z"
+											fill="#FFF"
+										/>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="screen-reader-text"
+										>Google</span
+									>
+									<svg
+										width="16"
+										height="16"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z"
+											fill="#FFF"
+										/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div class="footer-copyright">
+							&copy; 2024 DOTS, all rights reserved
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script src="dist/js/main.min.js"></script>
+		<script src="./src/js/main.js"></script>
+		<script src="dist/js/main2.min.js"></script>
+		<script src="./src/js/scroll.js" defer></script>
+		<script>
+			fetch("/api/posts")
+				.then((res) => res.json())
+				.then((posts) => {
+					const container = document.getElementById("posts");
+
+					posts.forEach((post) => {
+						const tempDiv = document.createElement("div");
+						tempDiv.innerHTML = post.content;
+
+						// Ambil gambar pertama jika ada
+						const img = tempDiv.querySelector("img");
+						const imgSrc = img
+							? img.src
+							: "./dist/images/default-thumbnail.png";
+
+						// Ambil ringkasan teks
+						const textSnippet = tempDiv.textContent
+							.replace(/\s+/g, " ")
+							.trim()
+							.slice(0, 50);
+
+						container.innerHTML += `
+        <li class="template-card">
+          <a href="article/detail.html?id=${post.id}">
+            <img src="${imgSrc}" alt="${post.title}" />
+          </a>
+          <div class="description card-content">
+            <h3>${post.title || "Tanpa Judul"}</h3>
+            <p>${textSnippet}...</p>
+			<a href="article/detail.html?id=${post.id}">📖 Baca Selengkapnya</a>
+            <p style="color: gray;">🕒 ${post.timestamp || ""}</p>
+          </div>
+        </li>
+      `;
+					});
+				});
+
+			function logout() {
+				localStorage.removeItem("user");
+				alert("Berhasil logout");
+				window.location.href = "/template.html";
+			}
+		</script>
+	</body>
+</html>

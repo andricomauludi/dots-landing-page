@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blog Saya</title>
+		<style>
+			body {
+				font-family: sans-serif;
+				padding: 20px;
+				background-color: #f8f9fa;
+			}
+			#create-btn {
+				display: inline-block;
+				margin-bottom: 20px;
+				padding: 10px 15px;
+				background-color: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			#create-btn:hover {
+				background-color: #0056b3;
+			}
+			.card {
+				background-color: white;
+				border: 1px solid #ccc;
+				border-radius: 10px;
+				padding: 15px;
+				margin-bottom: 20px;
+				display: flex;
+				gap: 15px;
+				align-items: flex-start;
+			}
+			.card img {
+				width: 120px;
+				height: 80px;
+				object-fit: cover;
+				border-radius: 5px;
+			}
+			.card-content {
+				flex: 1;
+			}
+			.card-title {
+				margin: 0;
+			}
+			.card-snippet {
+				color: #555;
+			}
+			.card a {
+				display: inline-block;
+				margin-top: 10px;
+				color: #007bff;
+				text-decoration: none;
+			}
+			.card a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Artikel</h1>
+
+		<a id="create-btn" href="create.html">➕ Create New Article</a>
+		<a href="#" onclick="logout()" style="margin-left: 20px">🚪 Logout</a>
+
+		<div id="posts"></div>
+
+		<script>
+			fetch("/api/posts")
+				.then((res) => res.json())
+				.then((posts) => {
+					const container = document.getElementById("posts");
+
+					posts.forEach((post) => {
+						const tempDiv = document.createElement("div");
+						tempDiv.innerHTML = post.content;
+						console.log("Data dari API:", posts);
+
+						// Ambil gambar pertama jika ada
+						const img = tempDiv.querySelector("img");
+						const imgTag = img
+							? `<img src="${img.src}" alt="thumbnail">`
+							: "";
+
+						// Ambil ringkasan teks
+						const textSnippet = tempDiv.textContent
+							.replace(/\s+/g, " ") // hilangkan spasi berlebih
+							.trim()
+							.slice(0, 120); // ambil 120 karakter
+
+						container.innerHTML += `
+            <div class="card">
+              ${imgTag}
+              <div class="card-content">
+                <h2 class="card-title">${post.title || "(Tanpa Judul)"}</h2>
+                <p class="card-snippet">${textSnippet}...</p>
+                <small style="color:gray;">🕒 ${post.timestamp}</small>
+                <p class="card-snippet">${textSnippet}...</p>
+                <a href="detail.html?id=${post.id}">📖 Baca Selengkapnya</a>
+                
+              </div>
+            </div>
+          `;
+					});
+				});
+
+			function logout() {
+				localStorage.removeItem("user");
+				alert("Berhasil logout");
+				window.location.href = "/login.html";
+			}
+		</script>
+	</body>
+</html>

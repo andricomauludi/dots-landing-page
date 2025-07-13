@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link
+			href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Playfair+Display:700"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="dist/css/style.css" />
+		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+		<link rel="icon" href="./dist/images/dots-logo-white.png" />
+		<script
+			src="https://kit.fontawesome.com/37a99c8bdf.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Blog Saya</title>
+		<style>
+			.template-list {
+				list-style: none;
+				padding: 0;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+
+			.template-card {
+				width: calc(25% - 20px);
+				border: 1px solid #ccc;
+				border-radius: 25px;
+				overflow: hidden;
+				box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+				transition: 0.5s ease;
+				margin-bottom: 20px;
+			}
+
+			.template-card:hover {
+				box-shadow: 0 8px 16px rgba(255, 255, 255, 1);
+				transform: scale(1.1);
+				transition: 0.5s ease;
+			}
+
+			.template-card img {
+				width: 100%;
+				height: 300px;
+				object-fit: cover;
+			}
+
+			.template-card .description {
+				padding: 10px;
+				background-color: #1c1717;
+				color: white;
+			}
+
+			.template-card h3 {
+				margin-top: 0;
+				font-size: 16px;
+				color: #ccc;
+			}
+			#create-btn {
+				display: inline-block;
+				margin-bottom: 20px;
+				padding: 10px 15px;
+				background-color: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			#create-btn:hover {
+				background-color: #0056b3;
+			}
+			body {
+				font-family: sans-serif;
+				padding: 20px;
+				background-color: #f8f9fa;
+			}
+			#create-btn {
+				display: inline-block;
+				margin-bottom: 20px;
+				padding: 10px 15px;
+				background-color: #007bff;
+				color: white;
+				text-decoration: none;
+				border-radius: 5px;
+			}
+			#create-btn:hover {
+				background-color: #0056b3;
+			}
+			.card {
+				background-color: white;
+				border: 1px solid #ccc;
+				border-radius: 10px;
+				padding: 15px;
+				margin-bottom: 20px;
+				display: flex;
+				gap: 15px;
+				align-items: flex-start;
+			}
+			.card img {
+				width: 120px;
+				height: 80px;
+				object-fit: cover;
+				border-radius: 5px;
+			}
+			.card-content {
+				flex: 1;
+			}
+			.card-title {
+				margin: 0;
+			}
+			.card-snippet {
+				color: #555;
+			}
+			.card a {
+				display: inline-block;
+				margin-top: 10px;
+				color: #007bff;
+				text-decoration: none;
+			}
+			.card a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="body-wrap">
+			<nav
+				class="navbar navbar-expand-lg fixed-top navbar-dark"
+				style="background-color: #1c1717; z-index: 1000000"
+			>
+				<div class="container-fluid">
+					<a
+						class="navbar-brand"
+						href="./index.html"
+						style="margin-left: 30px"
+					>
+						<img
+							src="../dist/images/dots-logo-white.png"
+							width="100"
+							height="30"
+							alt=""
+						/>
+					</a>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarScroll"
+						aria-controls="navbarScroll"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarScroll">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex">
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									style="font-family: Chillax-Regular"
+									aria-current="page"
+									href="./index.html"
+									>Home</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link"
+									style="font-family: Chillax-Regular"
+									href="./about.html"
+									>About</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link active"
+									style="font-family: Chillax-Bold"
+									href="#"
+									>Stuffs</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									target="_blank"
+									href="./src/pdf/pitch_deck.pdf"
+									download="DOTS-Portfolio"
+									class="nav-link"
+									style="font-family: Chillax-Regular"
+									>Portfolio</a
+								>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<h1>Artikel</h1>
+
+			<a id="create-btn" href="create.html">➕ Create New Article</a>
+			<a href="#" onclick="logout()" style="margin-left: 20px"
+				>🚪 Logout</a
+			>
+
+			<div id="posts"></div>
+		</div>
+
+		<script>
+			fetch("/api/posts")
+				.then((res) => res.json())
+				.then((posts) => {
+					const container = document.getElementById("posts");
+
+					posts.forEach((post) => {
+						const tempDiv = document.createElement("div");
+						tempDiv.innerHTML = post.content;
+						console.log("Data dari API:", posts);
+
+						// Ambil gambar pertama jika ada
+						const img = tempDiv.querySelector("img");
+						const imgTag = img
+							? `<img src="${img.src}" alt="thumbnail">`
+							: "";
+
+						// Ambil ringkasan teks
+						const textSnippet = tempDiv.textContent
+							.replace(/\s+/g, " ") // hilangkan spasi berlebih
+							.trim()
+							.slice(0, 120); // ambil 120 karakter
+
+						container.innerHTML += `
+            <div class="card">
+              ${imgTag}
+              <div class="card-content">
+                <h2 class="card-title">${post.title || "(Tanpa Judul)"}</h2>
+                <p class="card-snippet">${textSnippet}...</p>
+                <small style="color:gray;">🕒 ${post.timestamp}</small>
+                <p class="card-snippet">${textSnippet}...</p>
+                <a href="detail.html?id=${post.id}">📖 Baca Selengkapnya</a>
+                
+              </div>
+            </div>
+          `;
+					});
+				});
+
+			function logout() {
+				localStorage.removeItem("user");
+				alert("Berhasil logout");
+				window.location.href = "/login.html";
+			}
+		</script>
+	</body>
+</html>
