@@ -1,49 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Edit Artikel</title>
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <style>#editor { height: 300px; }</style>
-  <script>
-    if (!localStorage.getItem("user")) {
-      alert("Anda harus login dulu!");
-      window.location.href = "/login.html";
-    }
-  </script>
-  
-</head>
-<body>
-  <h1 style="margin-bottom: 30px;">Edit Artikel</h1>
-  <h4>Judul</h4>
-  <input type="text" id="title" />
-  <div id="editor"></div>
-  <button id="updateBtn">💾 Simpan Perubahan</button>
+	<head>
+		<title>Artikel</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DOTS - About</title>
+		<link
+			href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+			rel="stylesheet"
+		/>
+    <link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script> 
+		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+		<style>
+			#editor {
+				height: 800px;
+			}
+      .ql-toolbar.ql-snow {
+				margin-bottom: 10px;
+			}
+			body {
+				font-family: sans-serif;
+				padding: 100px;
+				background-color: #f8f2ed;        
+			}
+		</style>
+		<script>
+			if (!localStorage.getItem("user")) {
+				alert("Anda harus login dulu!");
+				window.location.href = "/login.html";
+			}
+		</script>
+	</head>
+	<body class="">
+		<main>
+			<section>
+				<h1 style="margin-bottom: 30px">Edit Artikel</h1>
+				<button
+					class="btn btn-primary btn-shadow mt-3"
+					id="updateBtn"
+				>
+					💾 Simpan Perubahan
+				</button>
+				<h4>Judul</h4>
+				<input class="form-control" style="margin-bottom: 30px" type="text" id="title" />
+				<h4>Isi Artikel</h4>
+				<div id="editor"></div>
+			</section>
+		</main>
 
-  <script>
-    const id = new URLSearchParams(window.location.search).get("id");
-    const quill = new Quill("#editor", { theme: "snow" });
+		<script>
+			const id = new URLSearchParams(window.location.search).get("id");
+			const fullToolbar = [
+				[{ header: [1, 2, 3, false] }],
+				["bold", "italic", "underline"],
+				[{ list: "ordered" }, { list: "bullet" }],
+				["image", "link"],
+				["clean"],
+			];
 
-    fetch(`/api/posts/${id}`)
-      .then(res => res.json())
-      .then(post => {
-        document.getElementById("title").value = post.title;
-        quill.root.innerHTML = post.content;
-      });
+			const quill = new Quill("#editor", {
+				theme: "snow",
+				modules: {
+					toolbar: {
+						container: fullToolbar,
+						handlers: {
+							image: customImageHandler,
+						},
+					},
+				},
+			});
 
-    document.getElementById("updateBtn").addEventListener("click", () => {
-      const title = document.getElementById("title").value;
-      const content = quill.root.innerHTML;
+			// Custom handler gambar
+			function customImageHandler() {
+				const input = document.createElement("input");
+				input.setAttribute("type", "file");
+				input.setAttribute("accept", "image/*");
+				input.click();
 
-      fetch(`/api/posts/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, content })
-      }).then(() => {
-        alert("Artikel berhasil diupdate.");
-        window.location.href = `/admin/detail.html?id=${id}`;
-      });
-    });
-  </script>
-</body>
+				input.onchange = () => {
+					const file = input.files[0];
+					const formData = new FormData();
+					formData.append("image", file);
+
+					fetch("/api/upload", {
+						method: "POST",
+						body: formData,
+					})
+						.then((res) => res.json())
+						.then((data) => {
+							const range = quill.getSelection();
+							quill.insertEmbed(range.index, "image", data.url);
+						});
+				};
+			}
+
+			fetch(`/api/posts/${id}`)
+				.then((res) => res.json())
+				.then((post) => {
+					document.getElementById("title").value = post.title;
+					quill.root.innerHTML = post.content;
+				});
+
+			document
+				.getElementById("updateBtn")
+				.addEventListener("click", () => {
+					const title = document.getElementById("title").value;
+					const content = quill.root.innerHTML;
+
+					fetch(`/api/posts/${id}`, {
+						method: "PUT",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ title, content }),
+					}).then(() => {
+						alert("Artikel berhasil diupdate.");
+						window.location.href = `/admin/detail.html?id=${id}`;
+					});
+				});
+		</script>
+	</body>
 </html>
